@@ -1,0 +1,17 @@
+{
+  "name": "VisClasses",
+  "author": {"name": "Pierre Le Bras"},
+  "license": "MIT",
+  "scripts": {
+    "build": "esbuild --minify --sourcemap --bundle src/*.js --outdir=dist --format=esm",
+    "serve": "reload -b -n ./app -p 8000 | esbuild --watch --bundle src/*.js --outdir=dist --format=esm"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.10",
+    "reload": "^3.2.0"
+  },
+  "dependencies": {
+    "d3": "^7.6.1",
+    "tippy.js": "^6.3.7"
+  }
+}
