@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "esbuild --minify --sourcemap --bundle src/*.js --outdir=dist --format=esm",
-    "serve": "reload -b -n ./app -p 8000 | esbuild --watch --bundle src/*.js --outdir=dist --format=esm"
+    "serve": "reload -b -s testApp/index.html -p 8000 | esbuild --watch --bundle src/*.js --outdir=dist --format=esm"
   },
   "devDependencies": {
     "esbuild": "^0.15.10",
