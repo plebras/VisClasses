@@ -6671,7 +6671,12 @@ var BarChart = class extends Vis {
     return this;
   }
 };
-export {
-  BarChart as default
+
+// src/VisClasses.js
+var VisClasses_default = {
+  BarChart
 };
-//# sourceMappingURL=BarChart.js.map
+export {
+  VisClasses_default as default
+};
+//# sourceMappingURL=VisClasses.js.map

@@ -3,8 +3,8 @@
   "author": {"name": "Pierre Le Bras"},
   "license": "MIT",
   "scripts": {
-    "build": "esbuild --minify --sourcemap --bundle src/*.js --outdir=dist --format=esm",
-    "serve": "reload -b -s testApp/index.html -p 8000 | esbuild --watch --bundle src/*.js --outdir=dist --format=esm"
+    "build": "esbuild --minify --bundle src/*.js --outdir=dist --format=esm --out-extension:.js=.min.js --out-extension:.css=.min.css",
+    "serve": "reload -b -s testApp/index.html -p 8000 | esbuild --watch --sourcemap --bundle src/*.js --outdir=dist --format=esm"
   },
   "devDependencies": {
     "esbuild": "^0.15.10",
