@@ -1,0 +1,24 @@
+@import './vis.css';
+
+svg.barchart{
+    
+}
+
+svg.barchart > g.bars > rect.bar {
+    fill-opacity: 0.9;
+    fill: var(--main-color);
+    outline: none;
+}
+
+svg.barchart > g.bars > rect.bar.selected{
+    fill: var(--highlight-color);
+    stroke: var(--black);
+    stroke-width: 2px;
+}
+
+svg.barchart > g.bars > rect.bar.highlighted{
+    fill: var(--highlight-color);
+    stroke: var(--black);
+    stroke-width: 2px;
+    fill-opacity: 1;
+}
