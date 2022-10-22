@@ -3,7 +3,6 @@
  */
 
  import VisGrid from './VisGrid.js';
- import { applyStyleSVG, applyStyleTitle } from '../styles/styles.js';
  import * as d3 from 'd3';
  
  export default class Vis{
@@ -42,13 +41,11 @@
          this._svg = d3.select(container).append('svg')
              .classed(classed, true).classed('vis', true)
              .attr('width', this._grid.w).attr('height', this._grid.h);
-         applyStyleSVG(this._svg);
          
          // make title
          this._title = this._svg.append('text')
              .classed('title', true)
              .attr('transform', `translate(${this._grid.w/2},25)`);
-         applyStyleTitle(this._title);
          this.setTitle(title);
      }
  
