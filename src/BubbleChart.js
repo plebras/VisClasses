@@ -230,10 +230,10 @@ export default class BubbleChart extends Visualisation{
             )
             .sort((a,b)=>d3.descending(this.#R(a),this.#R(b)))
             .transition(tPosition)
-            .attr('cx', d=>this.#xScale(this.#X(d)))
-            .attr('cy', d=>this.#yScale(this.#Y(d)))
+            .attr('cx', (d,i)=>this.#xScale(this.#X(d,i)))
+            .attr('cy', (d,i)=>this.#yScale(this.#Y(d,i)))
             .transition(tSize)
-            .attr('r', d=>this.#rScale(this.#R(d)))
+            .attr('r', (d,i)=>this.#rScale(this.#R(d,i)))
             .style('fill', this.#C);
         this.#setTooltips();
         this.#setEvents();
@@ -276,7 +276,7 @@ export default class BubbleChart extends Visualisation{
     #select(keys, type){
         this.#getBubbles()
             .classed(type, false)
-            .filter(d=>keys.includes(this.#K(d)))
+            .filter((d,i)=>keys.includes(this.#K(d,i)))
             .classed(type, true);
         return this;
     }

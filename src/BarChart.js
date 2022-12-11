@@ -184,12 +184,12 @@ export default class BarChart extends Visualisation{
                     .remove())
             )
             .transition(tPosition)
-            .attr('x', d=>this.#xScale(this.#K(d)))
+            .attr('x', (d,i)=>this.#xScale(this.#K(d,i)))
             .attr('width', this.#xScale.bandwidth())
             .transition(tSize)
             .style('fill', this.#C)
-            .attr('height', d=>Math.abs(yOrigin-this.#yScale(this.#V(d))))
-            .attr('y', d=>Math.min(yOrigin, this.#yScale(this.#V(d))));
+            .attr('height', (d,i)=>Math.abs(yOrigin-this.#yScale(this.#V(d,i))))
+            .attr('y', (d,i)=>Math.min(yOrigin, this.#yScale(this.#V(d,i))));
         this.#setTooltips();
         this.#setEvents();
     }
@@ -231,7 +231,7 @@ export default class BarChart extends Visualisation{
     #select(keys, type){
         this.#barGroup.selectAll('rect.bar')
             .classed(type, false)
-            .filter(d=>keys.includes(this.#K(d)))
+            .filter((d,i)=>keys.includes(this.#K(d,i)))
             .classed(type, true);
         return this;
     }
