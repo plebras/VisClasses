@@ -1,2 +1,3 @@
 node_modules/**
 testApp/**
+*.code-workspace
