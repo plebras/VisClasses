@@ -28,7 +28,7 @@
          margin = [10,10,10,10],
          classed = '',
          title = null
-     }){
+     }={}){
          // set the svg size values
          this.#svgWidth = width;
          this.#svgHeight = height;

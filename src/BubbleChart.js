@@ -82,7 +82,7 @@ export default class BubbleChart extends Visualisation{
         colors = ()=>null,
         tooltips = undefined,
         data = []
-    }){
+    }={}){
         // call super constructor
         super({container, width, height, margin, classed: 'bubblechart', title});
     
