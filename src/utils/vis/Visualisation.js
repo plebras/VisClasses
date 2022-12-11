@@ -23,8 +23,8 @@
  
      constructor({
          container = 'body', 
-         width = 500, 
-         height = 500,
+         width = 800, 
+         height = 800,
          margin = [10,10,10,10],
          classed = '',
          title = null
