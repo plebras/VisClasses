@@ -35,6 +35,8 @@ export default class BarChart extends Visualisation{
     #out;
     #click;
 
+    #brush; // TODO
+
     // tooltips
     #tips = [];
 
@@ -73,8 +75,8 @@ export default class BarChart extends Visualisation{
 
         // set up selections
         this.#barGroup = this._svg.append('g')
-        .classed('bars', true)
-        .attr('transform', `translate${this._grid.tLS}`);
+            .classed('bars', true)
+            .attr('transform', `translate${this._grid.tLS}`);
 
         this.#xAxis = this._svg.append('g').attr('transform', `translate${this._grid.bLS}`);
         this.#yAxis = this._svg.append('g').attr('transform', `translate${this._grid.tLS}`);
